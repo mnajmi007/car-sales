@@ -14,6 +14,7 @@
         }
     </style>
     <h1>Car Sales Dashboards</h1>
+    <span>Total Car: {{$totalCar}}</span> | <span>Average ODO: {{ round($avgOdo) }}</span> | <span>Average Price: {{ round($avgPrice) }}</span> | <span>Average MMR: {{ round($avgMMR) }}</span>
     <table border="1">
         <tr>
             <th>Year</th>

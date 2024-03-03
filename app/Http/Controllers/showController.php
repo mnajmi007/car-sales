@@ -11,6 +11,14 @@ class showController extends Controller
     public function index(){
         $car = DB::table('car_sales')->paginate(10);
 
-        return view('dashboard',['car' => $car]);
+        $totalCar = DB::table('car_sales')->get()->count();
+
+        $avgOdo = DB::table('car_sales')->get()->avg('odometer');
+
+        $avgPrice = DB::table('car_sales')->get()->avg('sellingprice');
+
+        $avgMMR = DB::table('car_sales')->get()->avg('mmr');
+
+        return view('dashboard',['car' => $car, 'totalCar'=>$totalCar, 'avgOdo'=>$avgOdo, 'avgPrice' => $avgPrice, 'avgMMR' => $avgMMR]);
     }
 }
