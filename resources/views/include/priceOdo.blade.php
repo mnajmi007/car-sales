@@ -1,5 +1,5 @@
 <div class="col-sm-12 col-md-6 col-xl-6">
-    <h4 class="sub-title">Price and ODO</h4>
+    <h4 class="sub-title">Price vs ODO</h4>
     <canvas id="priceODO" style="width:100%;max-width:600px"></canvas>
     <script>
         function priceODO(){

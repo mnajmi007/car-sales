@@ -1,5 +1,5 @@
 <div class="col-sm-12 col-md-6 col-xl-6">
-    <h4>Price and MMR</h4>
+    <h4 class="sub-title">Price vs MMR</h4>
     <canvas id="priceMMR" style="width:100%;max-width:600px"></canvas>
     <script>
         function priceMMR(){
