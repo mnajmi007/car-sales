@@ -3,8 +3,24 @@
     <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
     <script>
         function brandTotal(){
-            const xValues = ["KIA", "BMW", "VOLVO", "NISSAN", "Chevrolet"];
-            const yValues = [55, 49, 44, 24, 15];
+            const xValues = ["Kia", "BMW", "VOLVO", "NISSAN", "Chevrolet"];
+            const yValues = [
+                <?php
+                echo DB::table('car_sales')->where('make','=','Kia')->count();
+                ?>, 
+                <?php
+                echo DB::table('car_sales')->where('make','=','BMW')->count();
+                ?>, 
+                <?php
+                echo DB::table('car_sales')->where('make','=','Volvo')->count();
+                ?>, 
+                <?php
+                echo DB::table('car_sales')->where('make','=','Nissan')->count();
+                ?>, 
+                <?php
+                echo DB::table('car_sales')->where('make','=','Chevrolet')->count();
+                ?>
+            ];
             const barColors = [
             "#b91d47",
             "#00aba9",

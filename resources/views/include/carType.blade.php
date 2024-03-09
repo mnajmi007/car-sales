@@ -1,10 +1,26 @@
 <div class="col-sm-12 col-md-6 col-xl-6">
-    <h4 class="sub-title">Car Type</h4>
+    <h4 class="sub-title">Car Body</h4>
     <canvas id="carType" style="width:100%;max-width:600px"></canvas>
     <script>
         function carType(){
             const xValues = ["SUV", "SEDAN", "COUPE", "CONVERTIBLE", "WAGON"];
-            const yValues = [55, 49, 44, 24, 15];
+            const yValues = [
+                <?php
+                echo DB::table('car_sales')->where('body','=','SUV')->count();
+                ?>,
+                <?php
+                echo DB::table('car_sales')->where('body','=','Sedan')->count();
+                ?>, 
+                <?php
+                echo DB::table('car_sales')->where('body','=','Coupe')->count();
+                ?>, 
+                <?php
+                echo DB::table('car_sales')->where('body','=','Convertible')->count();
+                ?>, 
+                <?php
+                echo DB::table('car_sales')->where('body','=','Wagon')->count();
+                ?>
+            ];
             const barColors = ["red", "green","blue","orange","brown"];
 
             new Chart("carType", {
